@@ -8,7 +8,6 @@ body {
     min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden; /* Mencegah scroll karena konfeti */
 }
 
 /* Kotak kartu ucapan */
@@ -146,6 +145,7 @@ h1 {
     height: 100%;
     pointer-events: none; /* Biar bisa klik tembus */
     z-index: 999;
+    overflow: hidden;
 }
 
 .confetti {

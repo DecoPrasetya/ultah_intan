@@ -1,0 +1,169 @@
+/* Menggunakan font Poppins yang modern dan Great Vibes untuk tulisan sambung */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Mencegah scroll karena konfeti */
+}
+
+/* Kotak kartu ucapan */
+.birthday-card {
+    position: relative; /* Diperlukan untuk container hati */
+    z-index: 10;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    padding: 30px 40px;
+    max-width: 500px;
+    text-align: center;
+    
+    /* Animasi kartu muncul */
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    animation: popIn 1s ease-out 0.5s forwards;
+}
+
+@keyframes popIn {
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* GIF di atas kartu */
+.birthday-gif {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Membuatnya sedikit "keluar" dari kartu */
+    margin-top: -100px; 
+    margin-bottom: 15px;
+    background: #fff; /* Jaga-jaga jika GIF transparan */
+}
+
+/* Judul (Selamat Ulang Tahun) */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    font-weight: 500;
+    margin: 0;
+    /* Animasi warna-warni pelangi */
+    animation: colorGlow 3s infinite alternate;
+}
+
+/* Animasi warna-warni pada H1 */
+@keyframes colorGlow {
+    0%   { color: #e91e63; text-shadow: 0 0 5px #ff8aae; }
+    50%  { color: #9c27b0; text-shadow: 0 0 5px #e1bee7; }
+    100% { color: #673ab7; text-shadow: 0 0 5px #d1c4e9; }
+}
+
+/* Paragraf sapaan (yang lucu) */
+.greeting {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Paragraf pesan utama */
+.main-message {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Tombol */
+#specialButton {
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+#specialButton:hover {
+    background: #c2185b;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+/* Pesan rahasia */
+#specialMessage {
+    margin-top: 30px;
+    border-top: 2px dashed #f0f0f0;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff9fa, #ffeff2);
+    border-radius: 10px;
+    border: 1px solid #fce4ec;
+    animation: fadeIn 1s ease-in;
+}
+
+#specialMessage h2 {
+    color: #c2185b;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Teks I Love You yang spesial */
+.love {
+    font-weight: 700;
+    color: #e91e63;
+    font-size: 1.2rem;
+}
+
+/* Class 'hidden' untuk menyembunyikan elemen */
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Bagian Animasi Konfeti (Confetti) --- */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Biar bisa klik tembus */
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 15px; /* Bentuk persegi panjang */
+    background: #f00; /* Warna akan di-override oleh JS */
+    top: -20px; /* Mulai dari atas */
+    opacity: 0.8;
+    animation: drop 4s linear infinite;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}

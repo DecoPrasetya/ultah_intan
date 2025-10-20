@@ -167,3 +167,58 @@ h1 {
         opacity: 0;
     }
 }
+
+/* --- Bagian Responsif untuk HP --- */
+
+@media (max-width: 550px) {
+
+    body {
+        /* Hapus padding agar kartu bisa mepet ke tepi layar */
+        padding: 0;
+        /* Beri sedikit padding atas bawah agar tidak nempel */
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .birthday-card {
+        /* Buat lebar kartu 90% dari lebar layar, 
+         agar ada sisa ruang 5% di kiri dan kanan.
+        */
+        width: 90%; 
+        
+        /* Hapus max-width agar tidak mentok di 500px.
+         Kita pakai width 90% sebagai gantinya.
+        */
+        max-width: none; 
+
+        /* Kurangi padding di dalam kartu agar muat lebih banyak */
+        padding: 20px 25px;
+        margin-top: 80px; /* Sedikit turunkan kartu */
+    }
+
+    /* Kecilkan GIF-nya */
+    .birthday-gif {
+        width: 120px;
+        height: 120px;
+        margin-top: -80px; /* Sesuaikan posisi agar tetap pas */
+        border-width: 4px;
+    }
+
+    /* Kecilkan ukuran font judul */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Kecilkan ukuran font pesan rahasia */
+    #specialMessage h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Kecilkan font sapaan dan pesan utama */
+    .greeting {
+        font-size: 1rem;
+    }
+    .main-message {
+        font-size: 0.95rem;
+    }
+}
